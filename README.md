@@ -2,6 +2,8 @@
 
 Vercel is an excellent platform for deploying React applications with zero-configuration and automatic scaling. Follow these steps to deploy the iBOX TV Frontend on Vercel:
 
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/manybotts/iboxtv-frontend)
+
 1. **Push Your Code to GitHub:**  
    Ensure your iBOX TV Frontend repository is pushed to GitHub.
 
