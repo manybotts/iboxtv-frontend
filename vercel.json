@@ -1,6 +1,4 @@
-
-**6. `frontend/vercel.json`**
-```json
+json
 {
   "version": 2,
   "builds": [
