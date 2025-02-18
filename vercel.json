@@ -7,7 +7,14 @@
       "config": { "distDir": "build" }
     }
   ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "^(?!/static/).*",
+      "dest": "/index.html"
+    }
   ]
 }
