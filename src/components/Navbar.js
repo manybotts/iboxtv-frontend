@@ -15,9 +15,12 @@ const Navbar = () => {
             marginRight: '2rem'
           }}
         >
-          iBOX TV
+          All Shows
         </Link>
-        <Link to="/trending" style={{ color: '#fff', textDecoration: 'none' }}>
+        <Link
+          to="/trending"
+          style={{ color: '#fff', textDecoration: 'none' }}
+        >
           Trending
         </Link>
       </div>
