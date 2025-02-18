@@ -4,21 +4,30 @@ import { useParams } from 'react-router-dom';
 const ShowDetails = () => {
   const { id } = useParams();
   const [show, setShow] = useState(null);
+  const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/shows/${id}`)
-      .then(response => response.json())
-      .then(data => setShow(data))
-      .catch(error => console.error('Error fetching show details:', error));
-  }, [id]);
+    fetch(`${backendURL}/shows`)
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((item) => item.id.toString() === id);
+        setShow(found);
+      })
+      .catch((err) => console.error("Error fetching show details:", err));
+  }, [id, backendURL]);
 
-  if (!show) return <p>Loading...</p>;
+  if (!show) return <div style={{ color: '#fff', padding: '1rem' }}>Loading...</div>;
 
   return (
-    <div style={{ padding: '20px', color: '#fff' }}>
+    <div style={{ padding: '1rem', color: '#fff' }}>
       <h1>{show.title}</h1>
-      <p>{show.description}</p>
-      <p>Streamable: {show.is_streamable ? 'Yes' : 'No'}</p>
+      <p>
+        Download Link:{' '}
+        <a href={show.download_link} style={{ color: '#e50914' }}>
+          {show.download_link}
+        </a>
+      </p>
+      <p>{show.is_streamable ? "Streamable" : "Not Streamable"}</p>
       <p>Popularity: {show.popularity}</p>
     </div>
   );
