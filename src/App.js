@@ -1,13 +1,8 @@
-
-### **Frontend Files**
-
-**1. `frontend/src/App.js`**
-```javascript
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ShowDetails from './components/ShowDetails';
-import Navbar from './components/Navbar';
 import Trending from './components/Trending';
 
 function App() {
