@@ -4,14 +4,22 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav style={{ background: '#141414', padding: '1rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '24px', fontWeight: 'bold' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Link
+          to="/"
+          style={{
+            color: '#e50914',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            marginRight: '2rem'
+          }}
+        >
           iBOX TV
         </Link>
-        <div>
-          <Link to="/" style={{ color: '#fff', textDecoration: 'none', margin: '0 10px' }}>Home</Link>
-          <Link to="/trending" style={{ color: '#fff', textDecoration: 'none', margin: '0 10px' }}>Trending</Link>
-        </div>
+        <Link to="/trending" style={{ color: '#fff', textDecoration: 'none' }}>
+          Trending
+        </Link>
       </div>
     </nav>
   );
